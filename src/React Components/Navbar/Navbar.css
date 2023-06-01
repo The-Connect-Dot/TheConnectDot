@@ -1,0 +1,32 @@
+.Navbar-main {
+  position: sticky;
+  filter: drop-shadow(2px 4px 6px black);
+  top: 0;
+  z-index: 100000000;
+  width: 100%;
+}
+.dropdown-item {
+  padding: 0.5rem 1.6rem;
+}
+.mg {
+  margin: auto 1vw;
+}
+.nb {
+  display: flex;
+}
+.nb img {
+  width: 3.6rem;
+}
+.nb div {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.collapse li a:hover {
+  border-bottom: 2px solid #ffc107;
+}
+.active {
+  border-bottom: 2px solid #ffc107;
+}
