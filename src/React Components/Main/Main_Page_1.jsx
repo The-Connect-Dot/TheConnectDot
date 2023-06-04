@@ -5,7 +5,6 @@ export default ()=>{
     return (
         <>
     <div class="header overlay">
-      
       {/* <!-- Header Content --> */}
       <div class="header-content">
         <div class="container">
@@ -21,7 +20,6 @@ export default ()=>{
       </div>
     </div>
     {/*End Header Section*/}
-    
     {/*Start Request a cal*/}
     <div class="header-bottom">
       <div class="container">

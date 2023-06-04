@@ -32,12 +32,12 @@ function Navbar(prop) {
               </NavLink>
             </li>
             <li className="nav-item mg">
-              <a className="nav-link" aria-current="page" href="/Mentor">
+              <a className="nav-link" aria-current="page" href="">
                 Mentor
               </a>
             </li>
             <li className="nav-item mg">
-              <a className="nav-link" aria-current="page" href="/Mentee">
+              <a className="nav-link" aria-current="page" href="">
                 Mentee
               </a>
             </li>
