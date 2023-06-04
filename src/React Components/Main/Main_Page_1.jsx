@@ -49,7 +49,7 @@ export default ()=>{
             Our <span class="main-color">services</span>
           </h2>
           <p class="upper">
-            Lorem ipsum dolor sit amet, consectetur elit.
+            Take one step towards your goal.
           </p>
         </div>
         <div class="services-content">
@@ -65,7 +65,7 @@ export default ()=>{
                 <div class="services-item-info">
                   <h3 class="capital">Building Projects</h3>
                   <p>
-                    Proving student best Career for them 
+                    Providing students hand on experience through Intern's and Projects. 
                   </p>
                   {/* <a class="btn opacity" href="#">read more</a> */}
                 </div>
@@ -82,8 +82,7 @@ export default ()=>{
                 <div class="services-item-info">
                   <h3 class="capital">Career Councling</h3>
                   <p>
-                    Business finance formulas provide business owners with
-                    specific information.
+                  we offer assistance with industrial training programs tailored to student’s interests and skills.
                   </p>
                   {/* <a class="btn opacity" href="#">read more</a> */}
                 </div>
@@ -100,8 +99,7 @@ export default ()=>{
                 <div class="services-item-info">
                   <h3 class="capital">Mentoring</h3>
                   <p>
-                    Business finance formulas provide business owners with
-                    specific information.
+                  we connect students with mentors from recognized organizations and esteemed companies.
                   </p>
                   {/* <a class="btn opacity" href="#">read more</a> */}
                 </div>
@@ -119,21 +117,21 @@ export default ()=>{
         <div class="row flex-col space-btwen">
           <div class="grid col-sm-11 col-md-9 col-lg-6">
             <div class="left-item">
-              <p class="upper">Lorem ipsum dolor sit amet.</p>
+              <p class="upper">Take one step towards your goal</p>
               <h2 class="h2 mg-bottom-15">
                 Our solutions for your
                 <span class="main-color"> growth</span>
               </h2>
               <p class="desc">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
-                tempora pariatur magnam ut ipsam labore? Quidem ipsam eius totam
-                voluptate nam nihil sequi velit!
+              Our mission is to help students connect their future aspirations with practical plans, ensuring a seamless and successful journey into their chosen careers.
               </p>
               <p class="desc">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Provident natus blanditiis sunt dolore ab quisquam.
+              Through our platform, students have access to mentors who are experienced professionals from recognized organizations and esteemed companies. These mentors offer valuable insights and advice based on their own career journeys.
               </p>
-              <a class="btn" href="#">read more</a>
+              <p class="desc">
+              We facilitate connections between students and industry professionals, enabling students to expand their professional network and gain valuable contacts in their chosen fields.
+              </p>
+              {/* <a class="btn" href="#">read more</a> */}
             </div>
           </div>
           <div class="grid col-lg-6">
@@ -159,7 +157,7 @@ export default ()=>{
                 </div>
                 <div class="grid col-xsm-6 col-sm-6 col-md-3 col-lg-6">
                   <div class="box">
-                    <span class="main-color">26</span>
+                    <span class="main-color">10</span>
                     <p>awards won</p>
                   </div>
                 </div>
@@ -194,7 +192,7 @@ export default ()=>{
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
                     nemo soluta deleniti quis.
                   </p> */}
-                  <a class="btn opacity" href="#">read more</a>
+                  {/* <a class="btn opacity" href="#">read more</a> */}
                 </div>
               </div>
             </div>
@@ -210,7 +208,7 @@ export default ()=>{
                 what they say <span class="main-color">about us</span>
               </h2>
               <p class="upper">
-                Lorem ipsum dolor sit amet, consectetur elit.
+                Thanks to them we are here 😉
               </p>
             </div>
             <div class="what-say-content">
@@ -218,12 +216,10 @@ export default ()=>{
                 <div class="grid what-width">
                   <div class="person relative">
                     <div class="person-info txt-center">
-                      <h3 class="capital">george walker</h3>
-                      <h4 class="main-color">chief financial analyst</h4>
+                      <h3 class="capital">Manish Kumar</h3>
+                      <h4 class="main-color">Software Engineer</h4>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Deserunt repellat omnis optio cum placeat repellendus, amet
-                        illo. Id maiores reiciendis odit sequi.
+                      From the very beginning, The Connect Dot Corp. stood out to me with their dedication and commitment to helping students transition smoothly from college to the corporate world. The guidance I received was invaluable in aligning my future aspirations with practical plans, ensuring a seamless transition into the software engineering field.
                       </p>
                     </div>
                     <img src="https://i.ibb.co/L1qR4bJ/1.png" alt="1" border="0"/>
@@ -232,12 +228,10 @@ export default ()=>{
                 <div class="grid what-width">
                   <div class="person relative">
                     <div class="person-info txt-center">
-                      <h3 class="capital">gohn smith</h3>
+                      <h3 class="capital">Sunil Goyal</h3>
                       <h4 class="main-color">chief financial analyst</h4>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Deserunt repellat omnis optio cum placeat repellendus, amet
-                        illo. Id maiores reiciendis odit sequi.
+                      The team at The Connect Dot Corp. understands the challenges that students face when making crucial decisions about their career paths. They provided me with personalized support and expert advice, helping me navigate through the complex landscape of postgraduate degrees, research opportunities, and competitive exams.
                       </p>
                     </div>
                     <img src="https://i.ibb.co/2vm590t/8.png" alt="8" border="0"/>
@@ -257,7 +251,7 @@ export default ()=>{
                 request a <span class="main-color">call back</span>
               </h2>
               <p class="upper">
-                Lorem ipsum dolor sit amet, consectetur elit.
+                Let us know more about you.
               </p>
             </div>
             <div class="contact-us-form">

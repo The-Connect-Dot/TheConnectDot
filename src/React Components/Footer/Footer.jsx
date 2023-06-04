@@ -9,7 +9,7 @@ function Footer() {
           <div class="col-sm-12 col-md-6">
             <h6>About</h6>
             <p class="text-justify">
-              Content
+            The Connect Dot Corp. is a company dedicated to guiding and mentoring students in their transition from college to the corporate world. Our mission is to help students connect their future aspirations with practical plans, ensuring a smooth and successful journey into their chosen careers. We understand the challenges students face when making important decisions about their future, such as choosing postgraduate degrees, research opportunities, MS programs, or preparing for competitive exams.
             </p>
           </div>
           <div class="col-xs-6 col-md-3">
