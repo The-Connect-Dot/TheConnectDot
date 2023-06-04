@@ -42,9 +42,9 @@ function Navbar(prop) {
               </a>
             </li>
             <li className="nav-item mg">
-              <NavLink className="nav-link" to="contact">
+              <a className="nav-link" href="#contact">
                 Contact
-              </NavLink>
+              </a>
             </li>
           </ul>
           <button type="button" className="btn btn-warning bttn">
