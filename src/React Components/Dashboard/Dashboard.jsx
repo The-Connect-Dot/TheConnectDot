@@ -15,11 +15,9 @@ export default ()=>{
     },[]);
    return (
    <div id="wrapper">
+   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" id="menu-toggle">click me</button>
       <div id="sidebar-wrapper">
          <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
-            <li class="">
-               <a href="/">Home</a>
-            </li>
             <li class="">
                <a href="#">Dashboard</a>
             </li>

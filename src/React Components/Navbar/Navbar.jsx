@@ -32,19 +32,19 @@ function Navbar(prop) {
               </NavLink>
             </li>
             <li className="nav-item mg">
-              <a className="nav-link" aria-current="page" href="/Mentor">
+              <a className="nav-link" aria-current="page" href="">
                 Mentor
               </a>
             </li>
             <li className="nav-item mg">
-              <a className="nav-link" aria-current="page" href="/Mentee">
+              <a className="nav-link" aria-current="page" href="">
                 Mentee
               </a>
             </li>
             <li className="nav-item mg">
-              <NavLink className="nav-link" to="contact">
+              <a className="nav-link" href="#Contact">
                 Contact
-              </NavLink>
+              </a>
             </li>
           </ul>
           <button type="button" className="btn btn-warning bttn">
