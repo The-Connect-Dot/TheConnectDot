@@ -14,7 +14,7 @@ export default ()=>{
             <p>
             At The Connect Dot Corp., we provide the necessary guidance and support to make informed choices.
             </p>
-            <a class="btn"  href="https://forms.gle/cQGSQkxLSX7dBMcMA">Register Here</a>
+            <a class="btn opacity" target="_blank" href="https://forms.gle/XS8EsPMFcRtWpVLc8">Register Here</a>
           </div>
         </div>
       </div>
@@ -38,8 +38,7 @@ export default ()=>{
     </div>
     {/*End Request a call*/} 
     
-    {/*Start Financail Services*/}
-    
+    {/*Start Our Services*/}
     <div class="services pd-t-b-50">
       <div class="container">
         <div class="services-header txt-center">
@@ -107,9 +106,9 @@ export default ()=>{
         </div>
       </div>
     </div>
-    {/* <!-- End Financail Services */}
+    {/* <!-- End Our Services */}
     
-    {/* <!-- Start Solution For Business */}
+    {/* <!-- Start Solution For Students */}
     <div class="solution overlay pd-t-b-50">
       <div class="container">
         <div class="row flex-col space-btwen">
@@ -165,7 +164,7 @@ export default ()=>{
         </div>
       </div>
     </div>
-    {/* <!-- End Solution For Business */}
+    {/* <!-- End Solution For Students */}
     
      {/* <!-- Start About Our Company */}
         <div class="about-company pd-t-b-50">
@@ -186,18 +185,88 @@ export default ()=>{
                   </h2>
                   <p class="desc">
                   The Connect Dot Corp. is a dedicated company focused on providing guidance and mentorship to students as they navigate the transition from college to the corporate world. Our primary mission is to assist students in aligning their future aspirations with practical strategies, facilitating a seamless and triumphant journey into their chosen careers. We deeply comprehend the daunting challenges students encounter when confronted with crucial decisions concerning their future paths, whether it involves selecting postgraduate degrees, exploring research opportunities, pursuing MS programs, or preparing for competitive exams. At The Connect Dot Corp., we proudly offer the indispensable guidance and unwavering support needed to ensure well-informed choices.</p>
-                  {/* <p class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum
-                    nemo soluta deleniti quis.
-                  </p> */}
                   {/* <a class="btn opacity" href="#">read more</a> */}
                 </div>
               </div>
             </div>
           </div>
         </div>                                       
-        {/* <!-- Start About Our Company */}
-                                                
+        {/* <!-- End About Our Company */}
+
+        {/* start of Mentee Section */}
+        <div class="solution overlay pd-t-b-50">
+          <div class="container">
+            <div class="row flex-col space-btwen">
+
+        <div class="services-header txt-center">
+          <h2 class="h2 capital mg-bottom-15">
+             <span class="main-color">Mentee services</span>
+          </h2>
+          <p class="upper">
+          Join us to learn and develop skills in Growing Environment
+          </p>
+        </div>
+        <div class="services-content">
+          <div class="row text-dark">
+            <div class="grid col-md-4">
+              <div class="services-item ">
+                <div class="imge">
+    
+                  <img class="responsive-img" 
+                       src="./Media logos/Mentoring.jpg" 
+                       alt="4" border="0"/>
+                </div>
+                <div class="services-item-info">
+                  <h3 class="capital">Mentorship</h3>
+                  <p>
+                  We provides mentorship programs that connect students with experienced professionals from recognized organizations and esteemed companies. 
+                  </p>
+                  <a class="btn opacity" target="_blank" href="https://forms.gle/XS8EsPMFcRtWpVLc8">Register Here</a>
+                </div>
+              </div>
+            </div>
+            <div class="grid col-md-4">
+              <div class="services-item">
+                <div class="imge">
+    
+                  <img class="responsive-img" 
+                       src="./Media logos/Apprenticeship.jpg" 
+                       alt="6" border="0"/>
+                </div>
+                <div class="services-item-info">
+                  <h3 class="capital">Apprenticeship</h3>
+                  <p>
+                 We Provide and ensures that apprentices receive comprehensive training and mentorship to maximize their learning and growth.
+                  </p>
+                  <a class="btn opacity" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfklrhqx5fDBs4R805we3U1tjkAyn36xoNYjjZcTuyxYYeZtw/viewform?usp=sf_link">Register Here</a>
+                </div>
+              </div>
+            </div>
+            <div class="grid col-md-4">
+              <div class="services-item">
+                <div class="imge">
+    
+                  <img class="responsive-img" 
+                       src="./Media logos/Internship.jpg" 
+                       alt="1" border="0"/>
+                </div>
+                <div class="services-item-info">
+                  <h3 class="capital">Internship</h3>
+                  <p>
+                  We offers internship opportunities designed to provide students with practical exposure and enhance their skill sets.
+                  </p>
+                  <a class="btn opacity" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdbC0OZnMtjKy2fmFYY394HvAMWVTz7Ylm-5DjCkCV9M6G9Ig/viewform?usp=sf_link">Register Here</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            </div>
+          </div>
+        </div>
+
+        {/* end of Mentee Section */}
          {/* <!-- Start They Say About Us */}
         <div class="what-say pd-t-b-50">
           <div class="container">
@@ -217,7 +286,7 @@ export default ()=>{
                       <h3 class="capital">Manish Kumar</h3>
                       <h4 class="main-color">Software Engineer</h4>
                       <p>
-                      From the very beginning, The Connect Dot Corp. stood out to me with their dedication and commitment to helping students transition smoothly from college to the corporate world. The guidance I received was invaluable in aligning my future aspirations with practical plans, ensuring a seamless transition into the software engineering field.
+                        From the very beginning, The Connect Dot Corp. stood out to me with their dedication and commitment to helping students transition smoothly from college to the corporate world. The guidance I received was invaluable in aligning my future aspirations with practical plans, ensuring a seamless transition into the software engineering field.
                       </p>
                     </div>
                     <img src="https://i.ibb.co/L1qR4bJ/1.png" alt="1" border="0"/>
@@ -259,8 +328,10 @@ export default ()=>{
                     <div class="form-group">
                       <input
                         class="general-input"
+                        name="fname"
                         type="text"
                         placeholder="full name"
+                        autoComplete="true"
                       />
                     </div>
                   </div>
@@ -268,6 +339,7 @@ export default ()=>{
                     <div class="form-group">
                       <input
                         class="general-input"
+                        name="email"
                         type="email"
                         placeholder="E-Mail address"
                       />
@@ -277,6 +349,7 @@ export default ()=>{
                     <div class="form-group">
                       <input
                         class="general-input"
+                        name="subject"
                         type="text"
                         placeholder="subject"
                       />
@@ -286,7 +359,7 @@ export default ()=>{
                 <div class="row">
                   <div class="grid col-xsm-12 col-sm-12">
                     <div class="form-group">
-                      <textarea placeholder="your message"></textarea>
+                      <textarea name="message" placeholder="your message"></textarea>
                     </div>
                   </div>
                 </div>

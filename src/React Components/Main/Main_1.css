@@ -1137,13 +1137,13 @@
     .col-sm-11 {
       width: calc((11 * 100%) / 12);
     }
-    .col-sm-12 {
+    /* .col-sm-12 {
       width: 100%;
-    }
+    } */
   }
   
   /* Medium Screens */
-  @media (min-width: 992px) {
+  @media (min-width: 770px) {
     .container {
       width: 970px;
     }
