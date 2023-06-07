@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function Navbar(prop) {
   return (
@@ -59,7 +60,7 @@ function Navbar(prop) {
             </li>
           </ul>
           <button type="button" className="btn btn-warning bttn disabled">
-            login
+            <a href="./Navbar/Signup">Login</a>
           </button>
         </div>
       </div>

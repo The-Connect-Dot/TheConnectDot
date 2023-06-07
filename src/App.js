@@ -6,6 +6,8 @@ import Mentee from "./Pages/Mentee/Mentee";
 import Navbar from "./React Components/Navbar/Navbar";
 // import Contact from "./Pages/Contact/Contact";
 import "./App.css";
+import Signup from "./React Components/Navbar/Signup";
+
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/Mentor" element={<Mentor />} />
           <Route path="/Mentee" element={<Mentee />} />
           {/* <Route path="contact" element={<Contact />} /> */}
+          <Route path="/signup" element={<Signup />
+        } />
         </Routes>
       </div>
     </BrowserRouter>
