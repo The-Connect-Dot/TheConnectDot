@@ -90,11 +90,11 @@ const firebaseConfig = {
   measurementId: "G-C2ZJPY1FR6",
 };
 
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
+const auth = getAuth(app);
+console.log(auth);
 function Signup() {
-  const auth = getAuth();
-  console.log(auth);
   const [user, setUser] = useState(null);
 
   const loginWithGoogle = async () => {
