@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
-import { NavLink} from "react-router-dom";
-import { Link } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar(prop) {
   return (
@@ -43,14 +43,47 @@ function Navbar(prop) {
               </a>
             </li> */}
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 Mentee
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" target="_blank" href="https://forms.gle/XS8EsPMFcRtWpVLc8">Mentorship</a></li>
-                <li><a class="dropdown-item" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfklrhqx5fDBs4R805we3U1tjkAyn36xoNYjjZcTuyxYYeZtw/viewform?usp=sf_link">Apprenticeship</a></li>
-                <li><hr class="dropdown-divider"/></li>
-                <li><a class="dropdown-item" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdbC0OZnMtjKy2fmFYY394HvAMWVTz7Ylm-5DjCkCV9M6G9Ig/viewform?usp=sf_link">Internship</a></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    target="_blank"
+                    href="https://forms.gle/XS8EsPMFcRtWpVLc8"
+                  >
+                    Mentorship
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    target="_blank"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfklrhqx5fDBs4R805we3U1tjkAyn36xoNYjjZcTuyxYYeZtw/viewform?usp=sf_link"
+                  >
+                    Apprenticeship
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    target="_blank"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdbC0OZnMtjKy2fmFYY394HvAMWVTz7Ylm-5DjCkCV9M6G9Ig/viewform?usp=sf_link"
+                  >
+                    Internship
+                  </a>
+                </li>
               </ul>
             </li>
             <li className="nav-item mg">
@@ -59,8 +92,8 @@ function Navbar(prop) {
               </a>
             </li>
           </ul>
-          <button type="button" className="btn btn-warning bttn disabled">
-            <a href="./Navbar/Signup">Login</a>
+          <button type="button" className="btn btn-warning bttn">
+            <a href="/Signup">Login</a>
           </button>
         </div>
       </div>
