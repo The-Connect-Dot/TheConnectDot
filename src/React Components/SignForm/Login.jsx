@@ -27,8 +27,14 @@ export default function UserInteraction({ type }) {
         console.log(e);
     };
 
-    const loginWithGoogle = async (e) => {
-        console.log(e);
+    const loginWithGoogle = async () => {
+        try {
+            const provider = new GoogleAuthProvider();
+            const userCredential = await signInWithPopup(auth, provider);
+            console.log("Google Signup/Login successful:", userCredential.user);
+        } catch (error) {
+            console.log("Google login failed:", error);
+        }
     };
 
     const logout = async () => {
