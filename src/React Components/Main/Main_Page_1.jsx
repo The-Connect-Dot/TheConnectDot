@@ -14,11 +14,12 @@ export default ()=>{
             <p>
             At The Connect Dot Corp., we provide the necessary guidance and support to make informed choices.
             </p>
-            <a class="btn opacity" target="_blank" href="https://forms.gle/XS8EsPMFcRtWpVLc8">Register Here</a>
+            <a class="btn opacity" target="_blank" href="/Register">Register Here</a>
           </div>
         </div>
       </div>
     </div>
+    
     {/*End Header Section*/}
     {/*Start Request a cal*/}
     <div class="header-bottom">

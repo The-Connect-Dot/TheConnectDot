@@ -5,6 +5,7 @@ import Mentor from "./Pages/Mentor/Mentor";
 import Mentee from "./Pages/Mentee/Mentee";
 import Navbar from "./React Components/Navbar/Navbar";
 import SignupPage from "./Pages/SignupPage/SignupPage";
+import Registerpage  from "./Pages/Register/Registerpage";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/Mentor" element={<Mentor />} />
           <Route path="/Mentee" element={<Mentee />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/register" element={<Registerpage />} />
         </Routes>
       </div>
     </BrowserRouter>

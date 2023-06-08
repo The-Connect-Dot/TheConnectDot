@@ -1,0 +1,24 @@
+/* Register.css */
+
+.register-container {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .registration-heading {
+    margin-bottom: 20px;
+  }
+  
+  .register-container label {
+    font-weight: bold;
+  }
+  
+  .register-container select {
+    margin-bottom: 10px;
+  }
+  
+  .register-container .form-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  

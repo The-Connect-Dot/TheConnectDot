@@ -93,7 +93,7 @@ function Navbar(prop) {
             </li>
           </ul>
           <button type="button" className="btn btn-warning bttn">
-            <a href="/Signup">Login</a>
+            <a href="/signup">Login</a>
           </button>
         </div>
       </div>
