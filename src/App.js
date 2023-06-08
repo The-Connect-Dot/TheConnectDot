@@ -4,23 +4,19 @@ import Home from "./Pages/Home";
 import Mentor from "./Pages/Mentor/Mentor";
 import Mentee from "./Pages/Mentee/Mentee";
 import Navbar from "./React Components/Navbar/Navbar";
-// import Contact from "./Pages/Contact/Contact";
-import "./App.css";
-import Signup from "./React Components/Navbar/Signup";
+import SignupPage from "./Pages/SignupPage/SignupPage";
 
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-      <Navbar />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Mentor" element={<Mentor />} />
           <Route path="/Mentee" element={<Mentee />} />
-          {/* <Route path="contact" element={<Contact />} /> */}
-          <Route path="/signup" element={<Signup />
-        } />
+          <Route path="/signup" element={<SignupPage />} />
         </Routes>
       </div>
     </BrowserRouter>
