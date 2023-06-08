@@ -1,12 +1,12 @@
-html {
+/* html {
     height: 100%;
   }
   body {
     margin:0;
     padding:0;
     font-family: sans-serif;
-    background: linear-gradient(#57606f, #2f3542);
-  }
+    
+  } */
   .user-interaction-page{
     height: auto;
     padding-top: 30px;
@@ -15,6 +15,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(#57606f, #2f3542);
   }
   .select-person{
     margin-bottom: 20px;
@@ -35,7 +36,7 @@ html {
   #persontype option:hover{
     background-color: #2f3542 !important;
   }
-  .login-box {
+  .register-box {
     width: 330px;
     padding: 40px;
     background: rgba(0,0,0,.7);
@@ -45,7 +46,7 @@ html {
     margin: auto;
   }
   
-  .login-box h2 {
+  .register-box h2 {
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
@@ -53,11 +54,11 @@ html {
     font-size: 1.2rem;
   }
   
-  .login-box .user-box {
+  .register-box .user-box {
     position: relative;
   }
   
-  .login-box .user-box input {
+  .register-box .user-box input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -68,7 +69,7 @@ html {
     outline: none;
     background: transparent;
   }
-  .login-box .user-box label {
+  .register-box .user-box label {
     position: absolute;
     top:0;
     left: 0;
@@ -79,15 +80,15 @@ html {
     transition: .5s;
   }
   
-  .login-box .user-box input:focus ~ label,
-  .login-box .user-box input:valid ~ label {
+  .register-box .user-box input:focus ~ label,
+  .register-box .user-box input:valid ~ label {
     top: -20px;
     left: 0;
     color: #03e9f4;
     font-size: 12px;
   }
   
-  .login-box form a {
+  .register-box form a {
     position: relative;
     display: inline-block;
     padding: 10px 15px;
@@ -102,7 +103,7 @@ html {
     cursor:pointer;
   }
   
-  .login-box a:hover {
+  .register-box a:hover {
     background: #03e9f4;
     color: black !important;
     border-radius: 5px;
@@ -112,19 +113,19 @@ html {
                 0 0 100px #037a81;
   
   }
-  .login-box .btns-container{
+  .register-box .btns-container{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 1rem;
   }
-  .login-box a span {
+  .register-box a span {
     position: absolute;
     display: block;
   }
   
-  .login-box a span:nth-child(1) {
+  .register-box a span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -144,7 +145,9 @@ html {
     cursor: pointer;
 
   }
-
+.google-sign-up{
+    white-space: nowrap;
+}
 
 
   @keyframes btn-anim1 {
@@ -156,7 +159,7 @@ html {
     }
   }
   
-  .login-box a span:nth-child(2) {
+  .register-box a span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
@@ -175,7 +178,7 @@ html {
     }
   }
   
-  .login-box a span:nth-child(3) {
+  .register-box a span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -194,7 +197,7 @@ html {
     }
   }
   
-  .login-box a span:nth-child(4) {
+  .register-box a span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
@@ -211,5 +214,10 @@ html {
     50%,100% {
       bottom: 100%;
     }
+  }
+  
+
+  #date-input::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Inverts the color to white */
   }
   
