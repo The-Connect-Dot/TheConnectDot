@@ -1,0 +1,43 @@
+.Navbar-main {
+  position: sticky;
+  filter: drop-shadow(2px 4px 6px black);
+  top: 0;
+  z-index: 100000000;
+  width: 100%;
+}
+.dropdown-item {
+  padding: 0.5rem 1.6rem;
+}
+/* .bttn{
+    padding: 0.4rem 2rem;
+    color: #000;
+    border-radius: 10%;
+    font-size: 1.2rem;
+} */
+.mg {
+  margin: auto 1vw;
+}
+.nb {
+  display: flex;
+}
+.nb p{
+  font-size: 0.9rem;
+}
+.nb img {
+  width: 3.6rem;
+}
+.nb div {
+  width: 40%;
+  display: flex;
+  line-height: 1;
+  height: 31px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.collapse li a:hover {
+  border-bottom: 2px solid #ffc107;
+}
+.active {
+  border-bottom: 2px solid #ffc107;
+}
