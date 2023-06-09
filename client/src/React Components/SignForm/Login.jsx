@@ -4,8 +4,6 @@ import "./Register.css";
 import { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-// import dotenv from "dotenv";
-// dotenv.config();
 
 const firebaseConfig = {
   apiKey: "AIzaSyASU8t9V4Hs8sCN23KfF68fW2hY2GMBtGg",

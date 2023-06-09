@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 routes.use(bodyParser.urlencoded({ extended: true }));
 
 routes.post("/mentee-register", async (req, res) => {
-    // res.json(req.body);
     var user = await MenteeModel.findOne({ email: req.body.email });
     if (!user) {
         user = new MenteeModel({
@@ -29,7 +28,17 @@ routes.post("/mentee-register", async (req, res) => {
 });
 
 routes.post("/mentee-login", async (req, res) => {
-    res.json(req.body);
+    var user = await MenteeModel.findOne({ email: req.body.email });
+    if (user) {
+        if (user.password === req.body.password) {
+            res.json({ msg: "user exist and password match" })
+        }
+        else {
+            res.json({ msg: "user exist and password don't match" })
+        }
+    }
+    res.json({ msg: "user don't exist" })
+
 });
 
 routes.post("/mentor-register", async (req, res) => {
@@ -37,7 +46,16 @@ routes.post("/mentor-register", async (req, res) => {
 });
 
 routes.post("/mentor-login", async (req, res) => {
-    res.json(req.body);
+    var user = await MentorModel.findOne({ email: req.body.email });
+    if (user) {
+        if (user.password === req.body.password) {
+            res.json({ msg: "user exist and password match" })
+        }
+        else {
+            res.json({ msg: "user exist and password don't match" })
+        }
+    }
+    res.json({ msg: "user don't exist" })
 });
 
 module.exports = routes
