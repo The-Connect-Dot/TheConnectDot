@@ -5,6 +5,7 @@ import Mentor from "./Pages/Mentor/Mentor";
 import Mentee from "./Pages/Mentee/Mentee";
 import Navbar from "./React Components/Navbar/Navbar";
 import SignupPage from "./Pages/SignupPage/SignupPage";
+import Login from "./React Components/SignForm/Login";
 // import firebase from "firebase/compat/app";
 // import "firebase/compat/auth";
 
@@ -30,7 +31,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Mentor" element={<Mentor />} />
           <Route path="/Mentee" element={<Mentee />} />
-          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/signup" element={<Login prop="register"/>} />
+          <Route path="/login" element={<Login prop="login"/>} />
         </Routes>
       </div>
     </BrowserRouter>
