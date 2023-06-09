@@ -88,24 +88,58 @@ export default function UserInteraction({ prop }) {
 
   const signupManually = async (event) => {
     const type = event.target.parentElement.parentElement[0].value;
-    const mail = event.target.parentElement.parentElement[1].value;
-    const pass = event.target.parentElement.parentElement[2].value;
-    const data = { email: mail, password: pass };
-
-    await fetch("http://localhost:5100/" + type + "-register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        console.log(result);
+    if (type === "mentee") {
+      const google = false;
+      const mail = event.target.parentElement.parentElement[1].value;
+      const name = event.target.parentElement.parentElement[2].value;
+      const phone = event.target.parentElement.parentElement[3].value;
+      const dob = event.target.parentElement.parentElement[4].value;
+      const gender = event.target.parentElement.parentElement[5].value;
+      const location = event.target.parentElement.parentElement[6].value;
+      const pass = event.target.parentElement.parentElement[7].value;
+      const data = {
+        email: mail,
+        password: pass,
+        name: name,
+        pnumber: phone,
+        dob: dob,
+        gender: gender,
+        location: location,
+        google: google,
+      };
+      await fetch("http://localhost:5100/" + "mentee-register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       })
-      .catch((error) => {
-        console.error(error);
-      });
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    } else {
+      const mail = event.target.parentElement.parentElement[1].value;
+      const pass = event.target.parentElement.parentElement[2].value;
+      const data = { email: mail, password: pass };
+      await fetch("http://localhost:5100/" + type + "-register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
   };
 
   const SignupWithGoogle = async (event) => {

@@ -39,6 +39,7 @@ const MenteeSchema = new mongo.Schema({
     isgoogle: {
         type: Boolean,
         required: true,
+        default: false,
     }
 });
 module.exports = mongoose.model("mentees", MenteeSchema);
