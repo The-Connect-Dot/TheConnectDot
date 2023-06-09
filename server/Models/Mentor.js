@@ -2,9 +2,8 @@ const { default: mongoose } = require('mongoose')
 const mongo = require('mongoose')
 const Str = require('@supercharge/strings')
 
-
-const AdminSchema = new mongo.Schema({
-    username: {
+const MentorSchema = new mongo.Schema({
+    email: {
         type: String,
         unique: true,
         required: true,
@@ -14,18 +13,32 @@ const AdminSchema = new mongo.Schema({
         default: Str.random(50),
         unique: true
     },
-    email: {
-        type: String,
-        unique: true,
-        lowercase: true,
-    },
     password: {
         type: String,
-        required: true,
-        minlength: 8,
     },
-    tusers: {
+    name: {
+        type: String,
+        required: true,
+    },
+    pnumber: {
         type: Number,
+        required: true,
+    },
+    dob: {
+        type: String,
+        required: true,
+    },
+    gender: {
+        type: String,
+        required: true,
+    },
+    location: {
+        type: String,
+        required: true,
+    },
+    isgoogle: {
+        type: Boolean,
+        required: true,
     }
 });
-module.exports = mongoose.model("admins", AdminSchema);
+module.exports = mongoose.model("mentors", MentorSchema);
