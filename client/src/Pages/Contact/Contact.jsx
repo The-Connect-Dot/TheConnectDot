@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import styles from "./Contact.module.css";
+import styles from "./Contact.css";
 import {
   FaYoutube,
   FaFacebook,

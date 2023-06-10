@@ -1,7 +1,11 @@
 import React,{useEffect} from "react";
 import "./Dashboard.css";
 
-export default ()=>{
+const Dashboard = () =>{
+
+   function changePage(element){
+      console.log(element)
+   }
     useEffect(()=>{
         document.getElementById("menu-toggle").addEventListener("click", function(e) {
             e.preventDefault();
@@ -19,7 +23,7 @@ export default ()=>{
       <div id="sidebar-wrapper">
          <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
             <li class="">
-               <a href="#">Dashboard</a>
+               <a onClick={()=>{changePage("Dashboard")}}>Dashboard</a>
             </li>
             <li>
                <a href="#">Mentoring Across Grades</a>
@@ -57,3 +61,5 @@ export default ()=>{
    </div>
     );
 }
+
+export default Dashboard;
