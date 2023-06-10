@@ -9,7 +9,6 @@ import Login from "./React Components/SignForm/Login";
 import Registerpage  from "./Pages/Register/Registerpage";
 
 
-
 function App() {
   return (
     <BrowserRouter>

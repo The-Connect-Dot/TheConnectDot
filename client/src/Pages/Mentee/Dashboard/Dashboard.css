@@ -15,9 +15,11 @@
     padding: 5%;
     display: flex;
 } */
-#menu-toggle{
+
+#menu-toggle {
    display: none;
 }
+
 #wrapper {
    padding-left: 0;
    -webkit-transition: all 0.5s ease;
@@ -26,10 +28,12 @@
    transition: all 0.5s ease;
    overflow: hidden;
 }
+
 #wrapper.toggled {
    padding-left: 250px;
    overflow: hidden;
 }
+
 #sidebar-wrapper {
    z-index: 1000;
    position: absolute;
@@ -44,9 +48,11 @@
    -o-transition: all 0.5s ease;
    transition: all 0.5s ease;
 }
+
 #wrapper.toggled #sidebar-wrapper {
    width: 250px;
 }
+
 #page-content-wrapper {
    position: absolute;
    padding: 15px;
@@ -54,16 +60,20 @@
    height: 100vh;
    overflow-x: hidden;
 }
+
 .xyz {
    min-width: 360px;
 }
+
 #wrapper.toggled #page-content-wrapper {
    position: relative;
    margin-right: 0px;
 }
+
 .fixed-brand {
    width: auto;
 }
+
 /* Sidebar Styles */
 .sidebar-nav {
    position: absolute;
@@ -74,40 +84,54 @@
    list-style: none;
    margin-top: 2px;
 }
+
+.sidebar-tab-content {
+   color: #ffffff; /* Set the color to white */
+   font-weight: 1000; /* Add thickness to the font */
+ }
+ 
+
 .sidebar-nav li {
    text-indent: 15px;
-   line-height: 40px;
+   line-height: 60px;
 }
+
 .sidebar-nav li a {
    display: block;
    text-decoration: none;
-   color: #999999;
+   color: #ffffff; /* Set the color to white */
 }
+
 .sidebar-nav li a:hover {
    text-decoration: none;
-   color: #fff;
+   color: #ffffff; /* Set the hover color to white */
    background: rgba(255, 255, 255, 0.2);
    border-left: red 2px solid;
 }
+
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
    text-decoration: none;
 }
+
 .sidebar-nav > .sidebar-brand {
    height: 65px;
    font-size: 18px;
    line-height: 60px;
 }
+
 .sidebar-nav > .sidebar-brand a {
-   color: #999999;
+   color: #ffffff; /* Set the brand color to white */
 }
+
 .sidebar-nav > .sidebar-brand a:hover {
-   color: #fff;
-   background: none;
+   color: #ffffff; /* Set the brand hover color to white */
 }
+
 .no-margin {
    margin: 0;
 }
+
 @media (min-width: 768px) {
    #wrapper {
       padding-left: 250px;
@@ -159,3 +183,11 @@
       display:block;
    }
 }
+
+/* Profile Page */
+
+ .profile-heading {
+   text-align: center;
+ }
+
+ 

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyASU8t9V4Hs8sCN23KfF68fW2hY2GMBtGg",
   authDomain: "dotconnect-73256.firebaseapp.com",
@@ -39,11 +40,19 @@ export default function UserInteraction({ prop }) {
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
+        if (result.msg) {
+          alert(result.msg);
+        }else{
+          alert("Login Successful");
+          window.location.href = "/Mentee";
+        }
       })
       .catch((error) => {
         console.error(error);
+        alert("User doesn't exist")
       });
   };
+
   const loginWithGoogle = async () => {
     try {
       const provider = new GoogleAuthProvider();
@@ -115,6 +124,11 @@ export default function UserInteraction({ prop }) {
         .then((response) => response.json())
         .then((result) => {
           console.log(result);
+          if (result.msg) {
+            alert(result.msg);
+          } else {
+            alert("Registered Successfully");
+          }
         })
         .catch((error) => {
           console.error(error);

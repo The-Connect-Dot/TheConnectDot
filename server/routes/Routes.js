@@ -20,10 +20,10 @@ routes.post("/mentee-register", async (req, res) => {
             isgoogle: req.body.google,
         })
         const result = await user.save();
-        res.json(result);
+        res.json({success:true, result});
     }
     else {
-        res.json({ msg: "user already exists!" });
+        res.json({success: false,msg: "user already exists!" });
     }
 });
 
@@ -31,10 +31,11 @@ routes.post("/mentee-login", async (req, res) => {
     var user = await MenteeModel.findOne({ email: req.body.email });
     if (user) {
         if (user.password === req.body.password) {
-            res.json({ msg: "user exist and password match" })
+            const result = await user.save();
+            res.json({success: true, result})
         }
         else {
-            res.json({ msg: "user exist and password don't match" })
+            res.json({success: false, msg: "password don't match" })
         }
     }
     res.json({ msg: "user don't exist" })
