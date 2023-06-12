@@ -3,6 +3,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./Pages/HomePage/HomePage";
 import Mentor from "./Pages/Mentor/Mentor";
 import Mentee from "./Pages/Mentee/Mentee";
+import UserPage from "./Pages/AuthPages/UserPage/UserPage";
 import Navbar from "./Components/Navbar/Navbar";
 import Login from "./Components/SignForm/Login";
 import GoogleSignup from "./Components/SignForm/GoogleSignup";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/signup" element={<Login prop="register" />} />
           <Route path="/login" element={<Login prop="login" />} />
           <Route path='/gsingup' element={<GoogleSignup />} />
+          <Route path='/auth/user' element={<UserPage />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -52,13 +52,27 @@ routes.post("/mentee-login", async (req, res) => {
 });
 
 routes.post('/verify-login', async (req, res) => {
-    const userId = req.body.userId.trim();
+    const userId = req.body.userId;
+    const email = req.body.email;
     const type = req.body.type.trim();
-    if (type === 'mentee') {
-        const user = await MenteeModel.findOne({ token: userId });
+    var user;
+    if (userId) {
+        userId = userId.trim();
+        if (type === 'mentee') {
+            user = await MenteeModel.findOne({ token: userId });
+        }
+        else {
+            user = await MentorModel.findOne({ token: userId });
+        }
     }
-    else {
-        const user = await MentorModel.findOne({ token: userId });
+    else if (email) {
+        email = email.trim();
+        if (type === 'mentee') {
+            user = await MenteeModel.findOne({ email: email });
+        }
+        else {
+            user = await MentorModel.findOne({ email: email });
+        }
     }
     if (user) {
         return res.json({ msg: "Found Saved Cache!", isSucess: true, userId: user.token });
@@ -69,7 +83,20 @@ routes.post('/verify-login', async (req, res) => {
 
 
 routes.post("/mentor-register", async (req, res) => {
-    res.json(req.body);
+    var user = await MentorModel.findOne({ email: req.body.email.trim() });
+    var password = req.body.password.trim();
+    const hasp = await bcrypt.hash(password, 12);
+    if (!user) {
+        user = new MentorModel({
+            email: req.body.email.trim().toLowerCase(),
+            password: hasp,
+        });
+        const result = await user.save();
+        user = await MentorModel.findOne({ email: req.body.email });
+        return res.json({ msg: "Mentee Registered Successfully!", isSucess: true, userId: user.token });
+    } else {
+        return res.json({ msg: "user already exists!", isSucess: false });
+    }
 });
 
 routes.post("/mentor-login", async (req, res) => {

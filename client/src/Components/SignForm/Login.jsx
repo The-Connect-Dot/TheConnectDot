@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useCookies } from "react-cookie";
-import Onload from "../AuthComponents/Onload/Onload";
+import Onload from "../Onload/Onload";
 import Alert from "../Alert/Alert";
 
 const firebaseConfig = {
@@ -66,6 +66,7 @@ export default function UserInteraction({ prop }) {
           maxAge: 2 * 24 * 60 * 60,
         });
         setStoredata({ userId: result.userId, type: type });
+        window.location.href = "/auth/user?type=" + type + "&page=dashboard";
       }
     } catch (error) {
       console.error(error);
@@ -77,6 +78,28 @@ export default function UserInteraction({ prop }) {
       const provider = new GoogleAuthProvider();
       const userCredential = await signInWithPopup(auth, provider);
       const email = userCredential.user.email;
+      try {
+        const response = await fetch("http://localhost:5100/verify-login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: email, type: type }),
+        });
+        const result = await response.json();
+        if (result.isSucess) {
+          setCookie("connectDot", [result.userId, type], {
+            path: "/",
+            maxAge: 2 * 24 * 60 * 60,
+          });
+          setStoredata({ userId: result.userId, type: type });
+          window.location.href = "/auth/user?type=" + type + "&page=dashboard";
+        } else {
+          removeCookie("connectDot");
+        }
+      } catch (error) {
+        console.error(error);
+      }
     } catch (error) {
       console.log("Google login failed:", error);
     }
@@ -101,9 +124,10 @@ export default function UserInteraction({ prop }) {
       });
       const result = await response.json();
       if (result.isSucess) {
-        window.location.href = "/auth/dashboard";
+        window.location.href =
+          "/auth/user?type=" + connectDot[1] + "&page=dashboard";
       } else {
-        removeCookie(connectDot);
+        removeCookie("connectDot");
       }
     } catch (error) {
       console.error(error);
