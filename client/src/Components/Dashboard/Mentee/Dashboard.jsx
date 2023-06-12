@@ -17,9 +17,9 @@ function Dashboard({ page }) {
         <div class="container-fluid xyz">
           <div class="row">
             <div class="col-lg-12">
-{/*               <h1>Dashboard</h1> */}
+{/*               <h1>Dashboard</h1> */} 
               <div>
-                <Dashboardpage/>
+                <Dashboardpage/>  
               </div>
             </div>
           </div>
