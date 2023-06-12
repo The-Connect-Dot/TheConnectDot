@@ -78,12 +78,7 @@ const Profileform = () => {
                 id="preferredslots"
                 label="Preferred Slots"
                 variant="outlined"
-                fullWidth
-                select
-              >
-                <MenuItem value="weekend">Weekend</MenuItem>
-                <MenuItem value="weekdays">Weekdays</MenuItem>
-                <MenuItem value="other">Other</MenuItem>
+                fullWidth>
               </TextField>
             </Grid>
             <Grid item xs={12}>

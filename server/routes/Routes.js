@@ -58,20 +58,38 @@ routes.post('/verify-login', async (req, res) => {
   });
 
 routes.post("/mentor-register", async (req, res) => {
-    res.json(req.body);
+    var user = await MentorModel.findOne({ email: req.body.email });
+    var password = req.body.password.trim();
+    const hasp = await bcrypt.hash(password, 12);
+    if (!user) {
+        user = new MentorModel({
+            email: req.body.email,
+            password: req.body.password,
+            isgoogle: req.body.google,
+        })
+        const result = await user.save();
+        res.json({success:true,userId:user.token});
+    }
+    else {
+        res.json({success: false,msg: "user already exists!" });
+    }
 });
 
 routes.post("/mentor-login", async (req, res) => {
     var user = await MentorModel.findOne({ email: req.body.email });
     if (user) {
-        if (user.password === req.body.password) {
-            res.json({ msg: "user exist and password match" })
+        const ismatch = bcrypt.compare(req.body.password.trim(), user.password)
+        if (ismatch) {
+            const result = await user.save();
+            res.json({success: true,result,userId:user.token })
         }
         else {
-            res.json({ msg: "user exist and password don't match" })
+            res.json({success: false, msg: "password don't match" })
         }
     }
     res.json({ msg: "user don't exist" })
+
+
 });
 
 module.exports = routes

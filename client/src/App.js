@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./Pages/Home/Home";
-import Mentor from "./Pages/Mentor/Mentor";
+import Mentor from "./React Components/Dashboard/Mentor/Mentor";
 import Mentee from "./React Components/Dashboard/Mentee/Mentee";
 import Navbar from "./React Components/Navbar/Navbar";
 import Login from "./React Components/SignForm/Login";

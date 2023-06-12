@@ -15,30 +15,12 @@ const MentorSchema = new mongo.Schema({
     },
     password: {
         type: String,
-    },
-    name: {
-        type: String,
-        required: true,
-    },
-    pnumber: {
-        type: Number,
-        required: true,
-    },
-    dob: {
-        type: String,
-        required: true,
-    },
-    gender: {
-        type: String,
-        required: true,
-    },
-    location: {
-        type: String,
         required: true,
     },
     isgoogle: {
         type: Boolean,
         required: true,
+        default: false,
     }
 });
 module.exports = mongoose.model("mentors", MentorSchema);

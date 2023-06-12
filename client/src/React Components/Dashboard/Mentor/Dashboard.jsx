@@ -26,7 +26,7 @@ function Dashboard() {
           <Profileform/>
         </div>
       );
-    }
+    } 
   };
 
   return (

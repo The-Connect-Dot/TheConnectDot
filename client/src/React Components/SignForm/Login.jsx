@@ -25,6 +25,34 @@ export default function UserInteraction({ prop }) {
   const auth = getAuth();
   const [user, setUser] = useState(null);
 
+  const loginManually_mentor = async (event) => {
+    const type = event.target.parentElement.parentElement[0].value;
+    const mail = event.target.parentElement.parentElement[1].value;
+    const pass = event.target.parentElement.parentElement[2].value;
+    const data = { email: mail, password: pass };
+    await fetch("http://localhost:5100/" + type + "-login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result);
+        if (result.msg) {
+          alert(result.msg);
+        }else{
+          alert("Login Successful");
+          window.location.href = "/Mentor";
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("User doesn't exist")
+      });
+  };
+
   const loginManually = async (event) => {
     const type = event.target.parentElement.parentElement[0].value;
     const mail = event.target.parentElement.parentElement[1].value;
@@ -147,6 +175,11 @@ export default function UserInteraction({ prop }) {
         .then((response) => response.json())
         .then((result) => {
           console.log(result);
+          if (result.msg) {
+            alert(result.msg);
+          } else {
+            alert("Registered Successfully");
+          }
         })
         .catch((error) => {
           console.error(error);
@@ -190,7 +223,7 @@ export default function UserInteraction({ prop }) {
                 <div className="btns-container">
                   <a
                     onClick={(e) => {
-                      loginManually(e);
+                      loginManually_mentor(e);
                     }}
                   >
                     <span></span>
