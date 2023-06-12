@@ -50,6 +50,10 @@ export default function UserInteraction({ prop }) {
     const mail = event.target.parentElement.parentElement[1].value;
     const pass = event.target.parentElement.parentElement[2].value;
     const data = { email: mail, password: pass };
+    if (!mail || !pass) {
+      window.alert("Please enter all details.");
+      return;
+    }
     try {
       const response = await fetch("http://localhost:5100/" + type + "-login", {
         method: "POST",
@@ -166,6 +170,10 @@ export default function UserInteraction({ prop }) {
       const gender = event.target.parentElement.parentElement[5].value;
       const location = event.target.parentElement.parentElement[6].value;
       const pass = event.target.parentElement.parentElement[7].value;
+      if (!mail || !pass || !name || !phone || !dob || !gender || !location) {
+        window.alert("Please enter all details.");
+        return;
+      }
       const data = {
         email: mail,
         password: pass,
@@ -203,6 +211,10 @@ export default function UserInteraction({ prop }) {
       const mail = event.target.parentElement.parentElement[1].value;
       const pass = event.target.parentElement.parentElement[2].value;
       const data = { email: mail, password: pass };
+      if (!mail || !pass) {
+        window.alert("Please enter all details.");
+        return;
+      }
       try {
         const response = await fetch(
           "http://localhost:5100/" + type + "-register",
