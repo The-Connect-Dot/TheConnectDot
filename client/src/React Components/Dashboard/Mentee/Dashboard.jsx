@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
 import Profileform from "./Profileform";
+import Dashboardpage from "./Dashboardpage";
 
 function Dashboard() {
   const [selectedField, setSelectedField] = useState("dashboard");
@@ -12,12 +13,8 @@ function Dashboard() {
   const renderContent = () => {
     if (selectedField === "dashboard") {
       return (
-        <div class="container-fluid xyz">
-          <div class="row">
-            <div class="col-lg-12">
-              <h1>Dashboard</h1>
-            </div>
-          </div>
+        <div>
+          <Dashboardpage/>
         </div>
       );
     } else if (selectedField === "profile") {
