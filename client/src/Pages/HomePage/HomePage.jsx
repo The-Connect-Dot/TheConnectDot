@@ -56,7 +56,7 @@ export default function HomePage() {
           <div className="services-content">
             <div className="row">
               <div className="grid col-md-4">
-                <div className="services-item">
+                <div className="services-item" style={{ height: "450px" }}>
                   <div className="imge">
                     <img
                       className="responsive-img"
@@ -76,7 +76,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="grid col-md-4">
-                <div className="services-item">
+                <div className="services-item" style={{ height: "450px" }}>
                   <div className="imge">
                     <img
                       className="responsive-img"
@@ -86,7 +86,7 @@ export default function HomePage() {
                     />
                   </div>
                   <div className="services-item-info">
-                    <h3 className="capital">Career Councling</h3>
+                    <h3 className="capital">Career Counselling </h3>
                     <p>
                       we offer assistance with industrial training programs
                       tailored to student’s interests and skills.
@@ -96,7 +96,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="grid col-md-4">
-                <div className="services-item">
+                <div className="services-item" style={{ height: "450px" }}>
                   <div className="imge">
                     <img
                       className="responsive-img"
@@ -245,7 +245,7 @@ export default function HomePage() {
             <div className="services-content">
               <div className="row text-dark">
                 <div className="grid col-md-4">
-                  <div className="services-item ">
+                  <div className="services-item " style={{ height: "550px" }}>
                     <div className="imge">
                       <img
                         className="responsive-img"
@@ -268,7 +268,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="grid col-md-4">
-                  <div className="services-item">
+                  <div className="services-item" style={{ height: "550px" }}>
                     <div className="imge">
                       <img
                         className="responsive-img"
@@ -278,7 +278,7 @@ export default function HomePage() {
                       />
                     </div>
                     <div className="services-item-info">
-                      <h3 className="capital">Apprenticeship</h3>
+                      <h3 className="capital">Skill Development</h3>
                       <p>
                         We Provide and ensures that apprentices receive
                         comprehensive training and mentorship to maximize their
@@ -291,7 +291,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="grid col-md-4">
-                  <div className="services-item">
+                  <div className="services-item" style={{ height: "550px" }}>
                     <div className="imge">
                       <img
                         className="responsive-img"

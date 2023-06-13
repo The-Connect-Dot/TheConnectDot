@@ -56,7 +56,7 @@ export default function UserInteraction({ prop }) {
     }
     try {
       const response = await fetch(
-        "https://backend-9wgm.onrender.com/" + type + "-login",
+        "https://backend-connectdot.vmplay.ml/" + type + "-login",
         {
           method: "POST",
           headers: {
@@ -87,7 +87,7 @@ export default function UserInteraction({ prop }) {
       const email = userCredential.user.email;
       try {
         const response = await fetch(
-          "https://backend-9wgm.onrender.com/verify-login",
+          "https://backend-connectdot.vmplay.ml/verify-login",
           {
             method: "POST",
             headers: {
@@ -126,7 +126,7 @@ export default function UserInteraction({ prop }) {
   const verifyLogin = async (connectDot) => {
     try {
       const response = await fetch(
-        "https://backend-9wgm.onrender.com/verify-login",
+        "https://backend-connectdot.vmplay.ml/verify-login",
         {
           method: "POST",
           headers: {
@@ -195,7 +195,7 @@ export default function UserInteraction({ prop }) {
       };
       try {
         const response = await fetch(
-          "https://backend-9wgm.onrender.com/" + type + "-register",
+          "https://backend-connectdot.vmplay.ml/" + type + "-register",
           {
             method: "POST",
             headers: {
@@ -226,7 +226,7 @@ export default function UserInteraction({ prop }) {
       }
       try {
         const response = await fetch(
-          "https://backend-9wgm.onrender.com/" + type + "-register",
+          "https://backend-connectdot.vmplay.ml/" + type + "-register",
           {
             method: "POST",
             headers: {

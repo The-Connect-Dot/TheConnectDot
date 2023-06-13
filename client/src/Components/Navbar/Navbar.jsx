@@ -21,7 +21,7 @@ function Navbar(prop) {
   const verifyLogin = async (connectDot) => {
     try {
       const response = await fetch(
-        "https://backend-9wgm.onrender.com/verify-login",
+        "https://backend-connectdot.vmplay.ml/verify-login",
         {
           method: "POST",
           headers: {
@@ -114,7 +114,7 @@ function Navbar(prop) {
                         target="_blank"
                         href="https://docs.google.com/forms/d/e/1FAIpQLSfklrhqx5fDBs4R805we3U1tjkAyn36xoNYjjZcTuyxYYeZtw/viewform?usp=sf_link"
                       >
-                        Apprenticeship
+                        Skill Development
                       </a>
                     </li>
                     <li>
@@ -212,7 +212,7 @@ function Navbar(prop) {
                         target="_blank"
                         href="https://docs.google.com/forms/d/e/1FAIpQLSfklrhqx5fDBs4R805we3U1tjkAyn36xoNYjjZcTuyxYYeZtw/viewform?usp=sf_link"
                       >
-                        Apprenticeship
+                        Skill Development
                       </a>
                     </li>
                     <li>
