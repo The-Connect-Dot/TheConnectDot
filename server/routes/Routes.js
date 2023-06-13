@@ -26,12 +26,12 @@ routes.post("/mentee-register", async (req, res) => {
             });
             const result = await user.save();
             user = await MenteeModel.findOne({ email: req.body.email });
-            return res.json({ msg: "Mentee Registered Successfully!", isSucess: true, userId: user.token });
+            return res.json({ msg: "Mentee Registered Successfully!", isSucess: true, userId: user.token, color: "green" });
         } else {
-            return res.json({ msg: "user already exists!", isSucess: false });
+            return res.json({ msg: "user already exists!", isSucess: false, color: "red" });
         }
     } catch (error) {
-        return res.json({ msg: "Some Error Ocurred!", isSucess: false });
+        return res.json({ msg: "Some Error Ocurred!", isSucess: false, color: "red" });
         console.log(error);
     }
 });
@@ -42,17 +42,17 @@ routes.post("/mentee-login", async (req, res) => {
         if (user) {
             const ismatch = await bcrypt.compare(req.body.password.trim(), user.password)
             if (ismatch) {
-                res.json({ msg: "Login Success!!", isSucess: true, userId: user.token });
+                res.json({ msg: "Login Success!!", isSucess: true, userId: user.token, color: "green" });
             } else {
-                res.json({ msg: "Wrong Password!", isSucess: false });
+                res.json({ msg: "Wrong Password!", isSucess: false, color: "red" });
             }
         }
         else {
-            res.json({ msg: "No User With That Mail!!", isSucess: false });
+            res.json({ msg: "No User With That Mail!!", isSucess: false, color: "red" });
 
         }
     } catch (error) {
-        return res.json({ msg: "Some Error Ocurred!", isSucess: false });
+        return res.json({ msg: "Some Error Ocurred!", isSucess: false, color: "red" });
         console.log(error);
     }
 });
@@ -82,12 +82,12 @@ routes.post('/verify-login', async (req, res) => {
             }
         }
         if (user) {
-            return res.json({ msg: "Found Saved Cache!", isSucess: true, userId: user.token });
+            return res.json({ msg: "Found Saved Cache!", isSucess: true, userId: user.token, color: "green" });
         } else {
-            return res.json({ msg: "Cache not Saved!", isSucess: false });
+            return res.json({ msg: "Cache not Saved!", isSucess: false, color: "red" });
         }
     } catch (error) {
-        return res.json({ msg: "Some Error Ocurred!", isSucess: false });
+        return res.json({ msg: "Some Error Ocurred!", isSucess: false, color: "red" });
         console.log(error);
     }
 });
@@ -106,12 +106,12 @@ routes.post("/mentor-register", async (req, res) => {
             });
             const result = await user.save();
             user = await MentorModel.findOne({ email: req.body.email });
-            return res.json({ msg: "Mentee Registered Successfully!", isSucess: true, userId: user.token });
+            return res.json({ msg: "Mentee Registered Successfully!", isSucess: true, userId: user.token, color: "green" });
         } else {
-            return res.json({ msg: "user already exists!", isSucess: false });
+            return res.json({ msg: "user already exists!", isSucess: false, color: "red" });
         }
     } catch (error) {
-        return res.json({ msg: "Some Error Ocurred!", isSucess: false });
+        return res.json({ msg: "Some Error Ocurred!", isSucess: false, color: "red" });
         console.log(error);
     }
 });
@@ -122,37 +122,37 @@ routes.post("/mentor-login", async (req, res) => {
         if (user) {
             const ismatch = await bcrypt.compare(req.body.password.trim(), user.password)
             if (ismatch) {
-                res.json({ msg: "Login Success!!", isSucess: true, userId: user.token });
+                res.json({ msg: "Login Success!!", isSucess: true, userId: user.token, color: "green" });
             } else {
-                res.json({ msg: "Wrong Password!", isSucess: false });
+                res.json({ msg: "Wrong Password!", isSucess: false, color: "red" });
             }
         }
         else {
-            res.json({ msg: "No User With That Mail!!", isSucess: false });
+            res.json({ msg: "No User With That Mail!!", isSucess: false, color: "red" });
 
         }
     } catch (error) {
-        return res.json({ msg: "Some Error Ocurred!", isSucess: false });
+        return res.json({ msg: "Some Error Ocurred!", isSucess: false, color: "red" });
         console.log(error);
     }
 
 });
 
-routes.post("/logout", async (req, res) => {
-    try {
-        // Your logout logic here
-        res.clearCookie("connectDot");
+// routes.post("/logout", async (req, res) => {
+//     try {
+//         // Your logout logic here
+//         res.clearCookie("connectDot");
 
-        // Optionally, you can reset the session object
-        req.session = null;
+//         // Optionally, you can reset the session object
+//         req.session = null;
 
-        return res.json({ msg: "Logged Out Successfully!", isSuccess: true });
-    } catch (error) {
-        console.error("Error logging out:", error);
-        // Handle error while logging out
-        return res.status(500).json({ msg: "Logout failed", isSuccess: false });
-    }
-});
+//         return res.json({ msg: "Logged Out Successfully!", isSuccess: true });
+//     } catch (error) {
+//         console.error("Error logging out:", error);
+//         // Handle error while logging out
+//         return res.status(500).json({ msg: "Logout failed", isSuccess: false });
+//     }
+// });
 
 
 

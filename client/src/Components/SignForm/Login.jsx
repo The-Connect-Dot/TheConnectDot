@@ -21,6 +21,19 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 export default function UserInteraction({ prop }) {
+  function showPopup(msg, type) {
+    var popup = document.getElementById("popup");
+    console.log(popup.childNodes);
+    console.log(popup.children[1].children[0]);
+    popup.children[1].children[0].innerText = msg;
+    popup.children[1].children[1].style.backgroundColor = type;
+
+    popup.style.display = "block";
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 4000);
+  }
+
   const [loader, setLoader] = useState(true);
   const [cookies, setCookie, removeCookie] = useCookies(["connectDot"]);
   const [storedata, setStoredata] = useState([]);
@@ -67,6 +80,7 @@ export default function UserInteraction({ prop }) {
       );
 
       const result = await response.json();
+      showPopup(result.msg, result.color);
       if (result.isSucess) {
         setCookie("connectDot", [result.userId, type], {
           path: "/",
@@ -97,6 +111,7 @@ export default function UserInteraction({ prop }) {
           }
         );
         const result = await response.json();
+        showPopup(result.msg, result.color);
         if (result.isSucess) {
           setCookie("connectDot", [result.userId, type], {
             path: "/",
@@ -136,6 +151,7 @@ export default function UserInteraction({ prop }) {
         }
       );
       const result = await response.json();
+      showPopup(result.msg, result.color);
       if (result.isSucess) {
         window.location.href =
           "/auth/user?type=" + connectDot[1] + "&page=dashboard";
@@ -206,6 +222,7 @@ export default function UserInteraction({ prop }) {
         );
 
         const result = await response.json();
+        showPopup(result.msg, result.color);
         if (result.isSucess) {
           setCookie("connectDot", [result.userId, type], {
             path: "/",
@@ -237,6 +254,7 @@ export default function UserInteraction({ prop }) {
         );
 
         const result = await response.json();
+        showPopup(result.msg, result.color);
         if (result.isSucess) {
           setCookie("connectDot", [result.userId, type], {
             path: "/",
@@ -273,6 +291,7 @@ export default function UserInteraction({ prop }) {
     <Onload />
   ) : (
     <div className="user-interaction-page">
+      <Alert />
       {formtype === "login" && (
         <div className="login-box">
           <div className="select-person">

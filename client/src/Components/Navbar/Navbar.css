@@ -3,7 +3,8 @@
   filter: drop-shadow(2px 4px 6px black);
   top: 0;
   z-index: 100000000;
-  width: 100%;
+  width: 100vw;
+  min-width: 350px;
 }
 .dropdown-item {
   padding: 0.5rem 1.6rem;
@@ -20,7 +21,7 @@
 .nb {
   display: flex;
 }
-.nb p{
+.nb p {
   font-size: 0.9rem;
 }
 .nb img {

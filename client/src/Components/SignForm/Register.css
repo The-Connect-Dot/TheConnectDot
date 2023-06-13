@@ -9,6 +9,7 @@
   } */
 .user-interaction-page {
   height: auto;
+  min-height: calc(max(600px, 100vh));
   padding-top: 30px;
   padding-bottom: 30px;
   width: 100vw;

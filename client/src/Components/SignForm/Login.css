@@ -1,4 +1,4 @@
-html {
+/* html {
   height: 100%;
 }
 body {
@@ -6,9 +6,23 @@ body {
   padding: 0;
   font-family: sans-serif;
   background: linear-gradient(#57606f, #2f3542);
+} */
+
+::-webkit-scrollbar {
+  width: 0.2rem;
+}
+::-webkit-scrollbar-thumb {
+  width: 0.1rem;
+  background-color: #21130d;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 0.2rem;
 }
 .user-interaction-page {
   height: auto;
+  min-height: calc(max(800px, 100vh));
   padding-top: 30px;
   padding-bottom: 30px;
   width: 100vw;
