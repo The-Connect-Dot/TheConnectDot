@@ -100,15 +100,44 @@ routes.post("/mentor-register", async (req, res) => {
 });
 
 routes.post("/mentor-login", async (req, res) => {
-    var user = await MentorModel.findOne({ email: req.body.email });
-    if (user) {
-        if (user.password === req.body.password) {
-            return res.json({ msg: "user exists and password matches" });
-        } else {
-            return res.json({ msg: "user exists but password doesn't match" });
+    try {
+        var user = await MentorModel.findOne({ email: req.body.email.trim() });
+        if (user) {
+            const ismatch = await bcrypt.compare(req.body.password.trim(), user.password)
+            if (ismatch) {
+                res.json({ msg: "Login Success!!", isSucess: true, userId: user.token });
+            } else {
+                res.json({ msg: "Wrong Password!", isSucess: false });
+            }
         }
+        else {
+            res.json({ msg: "No User With That Mail!!", isSucess: false });
+
+        }
+    } catch (error) {
+        console.log(error);
     }
-    return res.json({ msg: "user doesn't exist" });
+    
 });
+
+routes.post("/logout", async (req, res) => {
+    try {
+      // Your logout logic here
+      res.clearCookie("connectDot");
+    
+      // Optionally, you can reset the session object
+      req.session = null;
+    
+      return res.json({ msg: "Logged Out Successfully!", isSuccess: true });
+    } catch (error) {
+      console.error("Error logging out:", error);
+      // Handle error while logging out
+      return res.status(500).json({ msg: "Logout failed", isSuccess: false });
+    }
+  });
+  
+
+  
+  
 
 module.exports = routes;

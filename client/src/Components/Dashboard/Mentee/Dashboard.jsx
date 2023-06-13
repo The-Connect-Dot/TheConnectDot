@@ -2,14 +2,38 @@ import React, { useState } from "react";
 import "./Dashboard.css";
 import Profileform from "./Profileform";
 import Dashboardpage from "./Dashboardpage";
+import axios from "axios";
+
 function Dashboard({ page }) {
   console.log(page);
-
   const [selectedField, setSelectedField] = useState(page);
 
   const handleFieldClick = (field) => {
     setSelectedField(field);
   };
+
+  
+  const logfunc = async () => {
+    try {
+      const response = await axios.get("/logout")
+      if (response.ok) {
+        const data = await response.json();
+        if (data.isSuccess) {
+          console.log(data.msg); 
+          // window.location.href = "./";
+        } else {
+          console.log("Logout failed"); 
+        }
+      } else {
+        console.log("Logout failed with status:", response.status); 
+      }
+    } catch (error) {
+      console.error("Error logging out:", error);
+      // Handle error while logging out
+    }
+  };
+  
+  
 
   const renderContent = () => {
     if (selectedField === "dashboard") {
@@ -32,6 +56,10 @@ function Dashboard({ page }) {
         </div>
       );
     }
+    else if (selectedField === "logout") {
+      logfunc(); // Call the logfunc to initiate the logout process
+      return null; // Return null or any other UI component if needed
+    }
   };
 
   return (
@@ -53,7 +81,7 @@ function Dashboard({ page }) {
             <a onClick={() => handleFieldClick("profile")}>Profile</a>
           </li>
           <li>
-            <a href="#">Logout</a>
+            <a onClick={() => logfunc()}>Logout</a>
           </li>
         </ul>
       </div>
