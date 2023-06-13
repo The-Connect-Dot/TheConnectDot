@@ -52,8 +52,8 @@ routes.post("/mentee-login", async (req, res) => {
 });
 
 routes.post('/verify-login', async (req, res) => {
-    const userId = req.body.userId;
-    const email = req.body.email;
+    var userId = req.body.userId;
+    var email = req.body.email;
     const type = req.body.type.trim();
     var user;
     if (userId) {
