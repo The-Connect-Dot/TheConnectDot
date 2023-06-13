@@ -9,25 +9,30 @@ const bcrypt = require('bcryptjs');
 routes.use(bodyParser.urlencoded({ extended: true }));
 
 routes.post("/mentee-register", async (req, res) => {
-    var user = await MenteeModel.findOne({ email: req.body.email });
-    var password = req.body.password.trim();
-    const hasp = await bcrypt.hash(password, 12);
-    if (!user) {
-        user = new MenteeModel({
-            email: req.body.email.trim().toLowerCase(),
-            password: hasp,
-            name: req.body.name.trim(),
-            pnumber: req.body.pnumber.trim(),
-            dob: req.body.dob.trim(),
-            gender: req.body.gender.trim(),
-            location: req.body.location.trim(),
-            isgoogle: req.body.google,
-        });
-        const result = await user.save();
-        user = await MenteeModel.findOne({ email: req.body.email });
-        return res.json({ msg: "Mentee Registered Successfully!", isSucess: true, userId: user.token });
-    } else {
-        return res.json({ msg: "user already exists!", isSucess: false });
+    try {
+        var user = await MenteeModel.findOne({ email: req.body.email });
+        var password = req.body.password.trim();
+        const hasp = await bcrypt.hash(password, 12);
+        if (!user) {
+            user = new MenteeModel({
+                email: req.body.email.trim().toLowerCase(),
+                password: hasp,
+                name: req.body.name.trim(),
+                pnumber: req.body.pnumber.trim(),
+                dob: req.body.dob.trim(),
+                gender: req.body.gender.trim(),
+                location: req.body.location.trim(),
+                isgoogle: req.body.google,
+            });
+            const result = await user.save();
+            user = await MenteeModel.findOne({ email: req.body.email });
+            return res.json({ msg: "Mentee Registered Successfully!", isSucess: true, userId: user.token });
+        } else {
+            return res.json({ msg: "user already exists!", isSucess: false });
+        }
+    } catch (error) {
+        return res.json({ msg: "Some Error Ocurred!", isSucess: false });
+        console.log(error);
     }
 });
 
@@ -47,56 +52,67 @@ routes.post("/mentee-login", async (req, res) => {
 
         }
     } catch (error) {
+        return res.json({ msg: "Some Error Ocurred!", isSucess: false });
         console.log(error);
     }
 });
 
 routes.post('/verify-login', async (req, res) => {
-    var userId = req.body.userId;
-    var email = req.body.email;
-    const type = req.body.type.trim();
-    var user;
-    if (userId) {
-        userId = userId.trim();
-        if (type === 'mentee') {
-            user = await MenteeModel.findOne({ token: userId });
+    try {
+        var userId = req.body.userId;
+        var email = req.body.email;
+        const type = req.body.type.trim();
+        var user;
+        if (userId) {
+            userId = userId.trim();
+            if (type === 'mentee') {
+                user = await MenteeModel.findOne({ token: userId });
+            }
+            else {
+                user = await MentorModel.findOne({ token: userId });
+            }
         }
-        else {
-            user = await MentorModel.findOne({ token: userId });
+        else if (email) {
+            email = email.trim();
+            if (type === 'mentee') {
+                user = await MenteeModel.findOne({ email: email });
+            }
+            else {
+                user = await MentorModel.findOne({ email: email });
+            }
         }
-    }
-    else if (email) {
-        email = email.trim();
-        if (type === 'mentee') {
-            user = await MenteeModel.findOne({ email: email });
+        if (user) {
+            return res.json({ msg: "Found Saved Cache!", isSucess: true, userId: user.token });
+        } else {
+            return res.json({ msg: "Cache not Saved!", isSucess: false });
         }
-        else {
-            user = await MentorModel.findOne({ email: email });
-        }
-    }
-    if (user) {
-        return res.json({ msg: "Found Saved Cache!", isSucess: true, userId: user.token });
-    } else {
-        return res.json({ msg: "Cache not Saved!", isSucess: false });
+    } catch (error) {
+        return res.json({ msg: "Some Error Ocurred!", isSucess: false });
+        console.log(error);
     }
 });
 
 
 routes.post("/mentor-register", async (req, res) => {
-    var user = await MentorModel.findOne({ email: req.body.email.trim().toLowerCase() });
-    var password = req.body.password.trim();
-    console.log(user, password);
-    const hasp = await bcrypt.hash(password, 12);
-    if (!user) {
-        user = new MentorModel({
-            email: req.body.email.trim().toLowerCase(),
-            password: hasp,
-        });
-        const result = await user.save();
-        user = await MentorModel.findOne({ email: req.body.email });
-        return res.json({ msg: "Mentee Registered Successfully!", isSucess: true, userId: user.token });
-    } else {
-        return res.json({ msg: "user already exists!", isSucess: false });
+    try {
+        var user = await MentorModel.findOne({ email: req.body.email.trim().toLowerCase() });
+        var password = req.body.password.trim();
+        console.log(user, password);
+        const hasp = await bcrypt.hash(password, 12);
+        if (!user) {
+            user = new MentorModel({
+                email: req.body.email.trim().toLowerCase(),
+                password: hasp,
+            });
+            const result = await user.save();
+            user = await MentorModel.findOne({ email: req.body.email });
+            return res.json({ msg: "Mentee Registered Successfully!", isSucess: true, userId: user.token });
+        } else {
+            return res.json({ msg: "user already exists!", isSucess: false });
+        }
+    } catch (error) {
+        return res.json({ msg: "Some Error Ocurred!", isSucess: false });
+        console.log(error);
     }
 });
 
@@ -116,6 +132,7 @@ routes.post("/mentor-login", async (req, res) => {
 
         }
     } catch (error) {
+        return res.json({ msg: "Some Error Ocurred!", isSucess: false });
         console.log(error);
     }
 
