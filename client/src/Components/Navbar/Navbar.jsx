@@ -20,13 +20,16 @@ function Navbar(prop) {
 
   const verifyLogin = async (connectDot) => {
     try {
-      const response = await fetch("http://localhost:5100/verify-login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ userId: connectDot[0], type: connectDot[1] }),
-      });
+      const response = await fetch(
+        "https://backend-9wgm.onrender.com/verify-login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ userId: connectDot[0], type: connectDot[1] }),
+        }
+      );
       const result = await response.json();
       if (result.isSucess) {
         setNavcomp("dash");
