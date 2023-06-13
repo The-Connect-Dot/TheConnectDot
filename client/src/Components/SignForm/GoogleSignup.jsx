@@ -57,7 +57,7 @@ export default function GoogleLogin() {
             maxAge: 2 * 24 * 60 * 60,
           });
           setStoredata({ userId: result.userId, type: type });
-          window.location.href = "/auth/dashboard";
+          window.location.href = "/auth/user?type=" + type + "&page=dashboard";
         }
       } catch (error) {
         console.error(error);
@@ -89,7 +89,7 @@ export default function GoogleLogin() {
             maxAge: 2 * 24 * 60 * 60,
           });
           setStoredata({ userId: result.userId, type: type });
-          window.location.href = "/auth/dashboard";
+          window.location.href = "/auth/user?type=" + type + "&page=dashboard";
         }
       } catch (error) {
         console.error(error);

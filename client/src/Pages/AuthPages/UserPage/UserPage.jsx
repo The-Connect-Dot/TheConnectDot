@@ -21,7 +21,10 @@ export default function UserPage() {
     window.location.href = "/login";
   }
   var obj = JSON.parse(localData);
-  const type = obj["type"];
+  var type = obj["type"];
+  if (!type) {
+    type = params.split("&")[0].split("=")[1];
+  }
   return (
     <>
       {type === "mentee" && (

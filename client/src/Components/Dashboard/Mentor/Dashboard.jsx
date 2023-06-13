@@ -13,24 +13,18 @@ function Dashboard({ page }) {
 
   const logfunc = async () => {
     try {
-      const response = await fetch("http://localhost:5100/logout", { method: "POST" });
-      if (response.ok) {
-        const data = await response.json();
-        if (data.isSuccess) {
-          console.log(data.msg); // Output: Logged Out Successfully!
-        } else {
-          console.log("Logout failed"); // Handle logout failure
-        }
-      } else {
-        console.log("Logout failed with status:", response.status); // Handle logout failure
-      }
+      document.cookie.split(";").forEach((c) => {
+        document.cookie = c
+          .replace(/^ +/, "")
+          .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+      });
+      localStorage.removeItem("ConnectDot");
+      console.log("done");
+      window.location.href = "/login";
     } catch (error) {
       console.error("Error logging out:", error);
-      // Handle error while logging out
     }
   };
-  
-  
 
   const renderContent = () => {
     if (selectedField === "dashboard") {
@@ -52,8 +46,7 @@ function Dashboard({ page }) {
           <Profileform />
         </div>
       );
-    }
-    else if (selectedField === "logout") {
+    } else if (selectedField === "logout") {
       logfunc(); // Call the logfunc to initiate the logout process
       return null; // Return null or any other UI component if needed
     }

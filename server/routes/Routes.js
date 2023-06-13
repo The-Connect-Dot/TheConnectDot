@@ -83,8 +83,9 @@ routes.post('/verify-login', async (req, res) => {
 
 
 routes.post("/mentor-register", async (req, res) => {
-    var user = await MentorModel.findOne({ email: req.body.email.trim() });
+    var user = await MentorModel.findOne({ email: req.body.email.trim().toLowerCase() });
     var password = req.body.password.trim();
+    console.log(user, password);
     const hasp = await bcrypt.hash(password, 12);
     if (!user) {
         user = new MentorModel({
@@ -117,27 +118,27 @@ routes.post("/mentor-login", async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-    
+
 });
 
 routes.post("/logout", async (req, res) => {
     try {
-      // Your logout logic here
-      res.clearCookie("connectDot");
-    
-      // Optionally, you can reset the session object
-      req.session = null;
-    
-      return res.json({ msg: "Logged Out Successfully!", isSuccess: true });
-    } catch (error) {
-      console.error("Error logging out:", error);
-      // Handle error while logging out
-      return res.status(500).json({ msg: "Logout failed", isSuccess: false });
-    }
-  });
-  
+        // Your logout logic here
+        res.clearCookie("connectDot");
 
-  
-  
+        // Optionally, you can reset the session object
+        req.session = null;
+
+        return res.json({ msg: "Logged Out Successfully!", isSuccess: true });
+    } catch (error) {
+        console.error("Error logging out:", error);
+        // Handle error while logging out
+        return res.status(500).json({ msg: "Logout failed", isSuccess: false });
+    }
+});
+
+
+
+
 
 module.exports = routes;
