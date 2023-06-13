@@ -55,13 +55,16 @@ export default function UserInteraction({ prop }) {
       return;
     }
     try {
-      const response = await fetch("http://localhost:5100/" + type + "-login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://backend-9wgm.onrender.com/" + type + "-login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       const result = await response.json();
       if (result.isSucess) {
@@ -83,13 +86,16 @@ export default function UserInteraction({ prop }) {
       const userCredential = await signInWithPopup(auth, provider);
       const email = userCredential.user.email;
       try {
-        const response = await fetch("http://localhost:5100/verify-login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email: email, type: type }),
-        });
+        const response = await fetch(
+          "https://backend-9wgm.onrender.com/verify-login",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email: email, type: type }),
+          }
+        );
         const result = await response.json();
         if (result.isSucess) {
           setCookie("connectDot", [result.userId, type], {
@@ -119,13 +125,16 @@ export default function UserInteraction({ prop }) {
   };
   const verifyLogin = async (connectDot) => {
     try {
-      const response = await fetch("http://localhost:5100/verify-login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ userId: connectDot[0], type: connectDot[1] }),
-      });
+      const response = await fetch(
+        "https://backend-9wgm.onrender.com/verify-login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ userId: connectDot[0], type: connectDot[1] }),
+        }
+      );
       const result = await response.json();
       if (result.isSucess) {
         window.location.href =
@@ -186,7 +195,7 @@ export default function UserInteraction({ prop }) {
       };
       try {
         const response = await fetch(
-          "http://localhost:5100/" + type + "-register",
+          "https://backend-9wgm.onrender.com/" + type + "-register",
           {
             method: "POST",
             headers: {
@@ -217,7 +226,7 @@ export default function UserInteraction({ prop }) {
       }
       try {
         const response = await fetch(
-          "http://localhost:5100/" + type + "-register",
+          "https://backend-9wgm.onrender.com/" + type + "-register",
           {
             method: "POST",
             headers: {

@@ -41,7 +41,7 @@ export default function GoogleLogin() {
       };
       try {
         const response = await fetch(
-          "http://localhost:5100/" + type + "-register",
+          "https://backend-9wgm.onrender.com/" + type + "-register",
           {
             method: "POST",
             headers: {
@@ -72,7 +72,7 @@ export default function GoogleLogin() {
       const data = { email: mail, password: pass };
       try {
         const response = await fetch(
-          "http://localhost:5100/" + type + "-register",
+          "https://backend-9wgm.onrender.com/" + type + "-register",
           {
             method: "POST",
             headers: {

@@ -5,9 +5,7 @@ require("dotenv").config();
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
-// const BASE_URL = process.env.BASE_URL;
 
-// app.use(cors({ origin: '${BASE_URL}', credentials: true }));
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../client')));
