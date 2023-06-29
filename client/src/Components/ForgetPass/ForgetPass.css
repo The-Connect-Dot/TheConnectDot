@@ -1,0 +1,11 @@
+.forget-pass-body {
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+  background: linear-gradient(#57606f, #2f3542);
+}

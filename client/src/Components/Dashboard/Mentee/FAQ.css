@@ -1,0 +1,31 @@
+.pdf-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  color: white;
+  font-size: 1rem;
+}
+
+embed {
+  display: none;
+}
+
+.pdf-container a {
+  background-color: rgb(218, 63, 63);
+  width: 200px;
+  height: 60px;
+  color: white;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 8px;
+}
+
+.accordion-body {
+  font-size: 1.4rem;
+  line-height: 180%;
+}

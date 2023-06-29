@@ -1,0 +1,20 @@
+.App {
+  background-color: #f7f7f7;
+  min-width: 350px;
+}
+html {
+  background-color: #f7f7f7;
+}
+
+::-webkit-scrollbar {
+  width: 0.2rem;
+}
+::-webkit-scrollbar-thumb {
+  width: 0.1rem;
+  background-color: #21130d;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 0.2rem;
+}
